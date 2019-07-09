@@ -224,7 +224,7 @@ window.addEventListener(
         touchStartX = event.touches[0].pageX;
         // touchStartY = event.touches[0].pageY;
       },
-      false
+      { passive: false }
     );
 
     // 移動時
@@ -236,7 +236,7 @@ window.addEventListener(
         touchMoveX = event.changedTouches[0].pageX;
         // touchMoveY = event.changedTouches[0].pageY;
       },
-      false
+      { passive: false }
     );
 
     // 終了時
