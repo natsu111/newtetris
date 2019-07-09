@@ -243,17 +243,21 @@ window.addEventListener(
     window.addEventListener(
       "touchend",
       function(event) {
-        // 移動量の判定
-        if (touchStartX > touchMoveX) {
-          if (touchStartX > touchMoveX + 120) {
-            //右から左に指が移動した場合
-            playerMove(-1);
+        if (touchMoveX != null && touchMoveY != null) {
+          if (touchStartX > touchMoveX) {
+            // 移動量の判定
+            if (touchStartX > touchMoveX + 120) {
+              //右から左に指が移動した場合
+              playerMove(-1);
+            }
+          } else if (touchStartX < touchMoveX) {
+            if (touchStartX + 120 < touchMoveX) {
+              //左から右に指が移動した場合
+              playerMove(1);
+            }
           }
-        } else if (touchStartX < touchMoveX) {
-          if (touchStartX + 120 < touchMoveX) {
-            //左から右に指が移動した場合
-            playerMove(1);
-          }
+        } else {
+          playerRotate(-1);
         }
       },
       false
@@ -262,16 +266,16 @@ window.addEventListener(
   false
 );
 
-var mytap = window.ontouchstart === null ? "touchstart" : "click";
+// var mytap = window.ontouchstart === null ? "touchstart" : "click";
 
-var elm = document.getElementById("tetris");
-elm.addEventListener(
-  mytap,
-  function() {
-    playerRotate(-1);
-  },
-  false
-);
+// var elm = document.getElementById("tetris");
+// elm.addEventListener(
+//   mytap,
+//   function() {
+//     playerRotate(-1);
+//   },
+//   false
+// );
 
 // document.getElementById("pho").onclick = function() {
 //   playerRotate(-1);
