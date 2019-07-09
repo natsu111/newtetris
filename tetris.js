@@ -263,7 +263,7 @@ window.addEventListener(
 );
 
 window.onload = function() {
-  var bb = document.getElementById("click");
+  var bb = document.getElementById("tetris");
   bb.addEventListener(
     "click",
     function() {
