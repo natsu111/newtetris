@@ -262,9 +262,21 @@ window.addEventListener(
   false
 );
 
-document.getElementById("pho").onclick = function() {
-  playerRotate(-1);
-};
+var mytap = window.ontouchstart === null ? "touchstart" : "click";
+
+var elm = document.getElementById("pho");
+elm.addEventListener(
+  mytap,
+  function() {
+    playerRotate(-1);
+  },
+  false
+);
+
+// document.getElementById("pho").onclick = function() {
+//   playerRotate(-1);
+// };
+
 // window.onload = function() {
 //   var bb = document.getElementById("tetris");
 //   bb.addEventListener(
