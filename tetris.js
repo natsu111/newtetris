@@ -247,21 +247,19 @@ window.addEventListener(
         } else {
           playerRotate(1);
         }
-        if (touchStartX > touchMoveX) {
-          // 移動量の判定
-          if (touchStartX > touchMoveX + 120) {
-            //右から左に指が移動した場合
-            playerMove(-1);
-          } else {
-            playerRotate(1);
-          }
-        } else if (touchStartX < touchMoveX) {
-          if (touchStartX + 120 < touchMoveX) {
-            //左から右に指が移動した場合
-            playerMove(1);
-          } else {
-            playerRotate(1);
-          }
+        // 移動量の判定
+        if (touchStartX > touchMoveX + 80) {
+          //右から左に指が移動した場合
+          playerMove(-1);
+        } else if (touchMoveX < touchStartX <= touchMoveX + 80) {
+          playerRotate(1);
+        }
+
+        if (touchStartX + 80 < touchMoveX) {
+          //左から右に指が移動した場合
+          playerMove(1);
+        } else if (touchStartX < touchMoveX <= touchStartX + 80) {
+          playerRotate(1);
         }
       },
       false
