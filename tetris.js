@@ -243,7 +243,9 @@ window.addEventListener(
     window.addEventListener(
       "touchend",
       function(event) {
-        if (touchMoveX != null && touchMoveY != null) {
+        if (touchMoveX == null && touchMoveY == null) {
+          playerRotate(-1);
+        } else {
           if (touchStartX > touchMoveX) {
             // 移動量の判定
             if (touchStartX > touchMoveX + 50) {
@@ -260,8 +262,6 @@ window.addEventListener(
               playerRotate(-1);
             }
           }
-        } else {
-          playerRotate(-1);
         }
       },
       false
