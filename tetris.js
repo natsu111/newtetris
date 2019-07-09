@@ -1,10 +1,6 @@
 const canvas = document.getElementById("tetris");
 const context = canvas.getContext("2d");
 
-document.getElementById("tetris").onclick = function() {
-  playerRotate(1);
-};
-
 context.scale(20, 20);
 
 function arenaSweep() {
@@ -265,6 +261,10 @@ window.addEventListener(
   },
   false
 );
+
+document.getElementById("click").onclick = function() {
+  playerRotate(1);
+};
 
 playerReset();
 updateScore();
