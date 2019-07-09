@@ -264,7 +264,7 @@ window.addEventListener(
 
 var mytap = window.ontouchstart === null ? "touchstart" : "click";
 
-var elm = document.getElementById("pho");
+var elm = document.getElementById("tetris");
 elm.addEventListener(
   mytap,
   function() {
