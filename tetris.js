@@ -211,9 +211,9 @@ window.addEventListener(
   "load",
   function(event) {
     var touchStartX;
-    var touchStartY;
+    // var touchStartY;
     var touchMoveX;
-    var touchMoveY;
+    // var touchMoveY;
 
     // 開始時
     window.addEventListener(
@@ -222,7 +222,7 @@ window.addEventListener(
         event.preventDefault();
         // 座標の取得
         touchStartX = event.touches[0].pageX;
-        touchStartY = event.touches[0].pageY;
+        // touchStartY = event.touches[0].pageY;
       },
       false
     );
@@ -234,7 +234,7 @@ window.addEventListener(
         event.preventDefault();
         // 座標の取得
         touchMoveX = event.changedTouches[0].pageX;
-        touchMoveY = event.changedTouches[0].pageY;
+        // touchMoveY = event.changedTouches[0].pageY;
       },
       false
     );
@@ -243,25 +243,25 @@ window.addEventListener(
     window.addEventListener(
       "touchend",
       function(event) {
-        if (touchMoveX == null && touchMoveY == null) {
-          playerRotate(-1);
-        } else {
+        if (touchMoveX != null) {
           if (touchStartX > touchMoveX) {
             // 移動量の判定
             if (touchStartX > touchMoveX + 50) {
               //右から左に指が移動した場合
               playerMove(-1);
             } else {
-              playerRotate(-1);
+              playerRotate(1);
             }
           } else if (touchStartX < touchMoveX) {
             if (touchStartX + 50 < touchMoveX) {
               //左から右に指が移動した場合
               playerMove(1);
             } else {
-              playerRotate(-1);
+              playerRotate(1);
             }
           }
+        } else {
+          playerRotate(1);
         }
       },
       false
