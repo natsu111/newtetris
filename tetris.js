@@ -274,14 +274,14 @@ window.addEventListener("load", function (event) {
     window.addEventListener("touchend", function (event) {
         // 移動量の判定
         if (touchStartX > touchMoveX) {
-            if (touchStartX > (touchMoveX + 100)) {
+            if (touchStartX > (touchMoveX + 300)) {
                 //右から左に指が移動した場合
                 playerMove(-1);
             } else {
                 playerRotate(1);
             }
         } else if (touchStartX < touchMoveX) {
-            if ((touchStartX + 100) < touchMoveX) {
+            if ((touchStartX + 300) < touchMoveX) {
                 //左から右に指が移動した場合
                 playerMove(1);
             } else {
