@@ -262,6 +262,9 @@ window.addEventListener(
   false
 );
 
+document.getElementById("pho").onclick = function() {
+  playerRotate(-1);
+};
 // window.onload = function() {
 //   var bb = document.getElementById("tetris");
 //   bb.addEventListener(
