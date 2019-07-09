@@ -262,8 +262,15 @@ window.addEventListener(
   false
 );
 
-document.getElementById("click").onclick = function() {
-  playerRotate(1);
+window.onload = function() {
+  var bb = document.getElementById("click");
+  bb.addEventListener(
+    "click",
+    function() {
+      playerRotate(-1);
+    },
+    false
+  );
 };
 
 playerReset();
