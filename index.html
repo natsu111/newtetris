@@ -16,11 +16,16 @@
             height: 90vh;
         }
     </style>
+    <script>
+        function test() {
+            playerRotate(1);
+        };
+    </script>
 </head>
 
 <body>
     <div id="score"></div>
-    <canvas id="tetris" width="240" height="400" />
+    <canvas id="tetris" width="240" height="400" onclick="test();" />
     <script src="tetris.js"></script>
 </body>
 

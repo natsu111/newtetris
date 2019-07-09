@@ -262,16 +262,16 @@ window.addEventListener(
   false
 );
 
-window.onload = function() {
-  var bb = document.getElementById("tetris");
-  bb.addEventListener(
-    "click",
-    function() {
-      playerRotate(-1);
-    },
-    false
-  );
-};
+// window.onload = function() {
+//   var bb = document.getElementById("tetris");
+//   bb.addEventListener(
+//     "click",
+//     function() {
+//       playerRotate(-1);
+//     },
+//     false
+//   );
+// };
 
 playerReset();
 updateScore();
