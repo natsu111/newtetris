@@ -255,7 +255,7 @@ window.addEventListener(
           //   }
           //  (touchStartX < touchMoveX) {
           //     if
-          else if (touchStartX + 30 < touchMoveX) {
+          if (touchStartX + 30 < touchMoveX) {
             //左から右に指が移動した場合
             playerMove(1);
           } else if (touchStartX < touchMoveX <= touchStartX + 30) {
