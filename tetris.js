@@ -244,15 +244,15 @@ window.addEventListener(
       "touchend",
       function(event) {
         if (touchMoveX != null) {
-          if (touchStartX > touchMoveX + 30) {
-            //右から左に指が移動した場合
-            playerMove(-1);
-          } else if (touchStartX + 30 < touchMoveX) {
-            //左から右に指が移動した場合
-            playerMove(1);
-          } else if (-30 <= touchStartX - touchMoveX <= 30) {
-            playerRotate(1);
-          }
+        } else {
+          playerRotate(1);
+        }
+        if (touchStartX > touchMoveX + 30) {
+          //右から左に指が移動した場合
+          playerMove(-1);
+        } else if (touchStartX + 30 < touchMoveX) {
+          //左から右に指が移動した場合
+          playerMove(1);
         } else {
           playerRotate(1);
         }
@@ -263,6 +263,7 @@ window.addEventListener(
   false
 );
 
+// else if (-30 <= touchStartX - touchMoveX <= 30)
 // var mytap = window.ontouchstart === null ? "touchstart" : "click";
 
 // var elm = document.getElementById("tetris");
